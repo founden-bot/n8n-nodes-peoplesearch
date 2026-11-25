@@ -1,0 +1,31 @@
+# Publishes n8n-nodes-peoplesearch to npm with a provenance statement, the way n8n requires for verified community
+# nodes (docs.n8n.io, Submit community nodes: from 1 May 2026, published from GitHub Actions, never from a local
+# machine). Runs on a version tag (v0.1.1) or by hand (workflow_dispatch); the npm token is the repository secret NPM_TOKEN.
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          RELEASE_MODE: 'true'
