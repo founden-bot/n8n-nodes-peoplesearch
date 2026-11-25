@@ -1,0 +1,60 @@
+{
+  "name": "n8n-nodes-peoplesearch",
+  "version": "0.1.1",
+  "description": "PeopleSearch.im for n8n: find people and verified work emails from a plain-English description, unlock profiles, find and verify work emails, and search companies.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "people search",
+    "email finder",
+    "work email",
+    "email verification",
+    "lead generation",
+    "recruiting",
+    "b2b data"
+  ],
+  "license": "MIT",
+  "homepage": "https://peoplesearch.im/developers",
+  "author": {
+    "name": "PeopleSearch.im",
+    "email": "hello@peoplesearch.im"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/founden-bot/n8n-nodes-peoplesearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/founden-bot/n8n-nodes-peoplesearch/issues",
+    "email": "hello@peoplesearch.im"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "n8n-node build",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "prepublishOnly": "n8n-node prerelease"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/PeopleSearchApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/PeopleSearch/PeopleSearch.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.58.6",
+    "eslint": "9.39.5",
+    "n8n-workflow": "2.49.4",
+    "prettier": "3.6.2",
+    "typescript": "5.9.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
