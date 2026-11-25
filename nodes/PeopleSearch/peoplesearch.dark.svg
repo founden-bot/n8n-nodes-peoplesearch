@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="PeopleSearch.im">
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#5C9DFF"/>
+  <g stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round">
+    <line x1="20" y1="44" x2="33" y2="20"/>
+    <line x1="33" y1="44" x2="46" y2="20"/>
+  </g>
+</svg>
